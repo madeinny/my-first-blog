@@ -3,24 +3,71 @@
 {% block content %}
 
 {% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
+<!-- <p>Authentication failed. Please try again.</p> -->
+<div class="alert alert-danger" role="alert"><strong>Authentication failed!</strong> Please try again.</div>
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
+<div class="container">
+    <form method="post" action="{% url 'login' %}" class="form-signin">
+    {% csrf_token %}
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="id_username" class="sr-only">Username</label>
+    <input autofocus="" id="id_username" maxlength="254" name="username" type="text" required class="form-control" placeholder="Username" required />
+    <label for="id_password" class="sr-only">Password</label>
+    <input type="password" name="password" id="id_password" class="form-control" placeholder="Password" required>
+    <input type="submit" class="btn btn-lg btn-primary btn-block" type="submit" value="login">
+    <input type="hidden" name="next" value="" />
+    </form>
+</div>
+
+{% endblock %}
+
+<!--       <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="id_password" class="sr-only">Password</label>
+        <input type="password" name="password" id="id_password" class="form-control" placeholder="Password" required>
+        <input type="submit" class="btn btn-lg btn-primary btn-block" type="submit" value="login">Sign in</button>
+        <input type="hidden" name="next" value="" />
+      </form>
+ -->
+
+<!--FROM LOGIN.HTML-->
+<!-- <form method="post" action="/accounts/login/">
+<input type='hidden' name='csrfmiddlewaretoken' value='JTtL7cz4szwTz0rITMBRX6x0JMXzEeR8Gk7Z0riR2aK41pvulKHoHCyfad2fuMUU' />
 <table>
 <tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
+    <td><label for="id_username">Username:</label></td>
+    <td><input autofocus="" id="id_username" maxlength="254" name="username" type="text" required /></td>
 </tr>
 <tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
+    <td><label for="id_password">Password:</label></td>
+    <td><input id="id_password" name="password" type="password" required /></td>
 </tr>
 </table>
 
 <input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
+<input type="hidden" name="next" value="" />
+</form> -->
 
-{% endblock %}
+
+<!--FROM BOOTSTRAP-->
+<!-- 
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> --> <!-- /container -->
