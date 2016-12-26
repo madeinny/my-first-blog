@@ -36,8 +36,8 @@
                                     </div>
                                     <strong>{{ comment.author }}</strong>
                                     {% if user.is_authenticated %}
-                                    <br />IP Address: {{ comment.ip_address }}
-                                    <br />User Agent: {{ comment.user_agent}}
+                                    <p class="comment-detail">IP Address: {{ comment.ip_address }}</p>
+                                    <p class="comment-detail">User Agent: {{ comment.user_agent}}</p>
                                     {% endif %}
                                     <p>{{ comment.text|linebreaks }}</p>
                                 <div>
