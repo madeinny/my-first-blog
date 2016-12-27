@@ -5,12 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Flight</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
         <link rel="stylesheet" href="{% static 'css/signin.css' %}">
-
     </head>
     <body>
         <div class="page-header">
@@ -18,11 +15,10 @@
                 <a href="{% url 'logout' %}" alt="Logout" class="top-menu"><span class="glyphicon glyphicon-log-out"></span></a>
                 <a href="{% url 'post_new' %}" alt="New Post" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <a href="{% url 'post_draft_list' %}" alt="Drafts" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-                <!-- <p class="top-menu">Hello, {{ user.username }}. </p> -->
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
             {% endif %}
-            <h1><a href="/"><img src="{% static 'images/takeoff_white.png' %}"  height="100" width="100" /></a></h1>
+            <h1><a href="/"><img src="{% static 'images/takeoff_white.png' %}"  height="50" width="50" /></a></h1>
         </div>
         <div class="content container">
             <div class="row">
